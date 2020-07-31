@@ -1,0 +1,27 @@
+version: '3.1'
+
+services:
+  wordpress:
+    image: wordpress:5.4.2
+    ports:
+      - 8080:8080
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_PASSWORD: admin123
+    volumes:
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
+      - ./woocommerce-4.3.1:/var/www/html/wp-content/plugins/woocommerce
+      - ./000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./ports.conf:/etc/apache2/ports.conf
+    networks:
+      - wc431
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+    networks:
+      - wc431
+
+networks:
+  wc431:

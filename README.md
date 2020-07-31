@@ -18,7 +18,7 @@ Change to the directory of the repository and switch to the folder of the desire
 
 `cd wp-x.x.x_wc-y.y.y`
 
-where `x.x.x` can be `4.7.5`, `4.8.0` or `5.2.2` and `y.y.y` can be `2.6.14`, `3.1.0` and `3.6.5`. In selected folder 
+where `x.x.x` can be `4.7.5`, `4.8.0` up to `5.4.2` and `y.y.y` can be `2.6.14`, `3.1.0` up to  `4.3.1`. In selected folder 
 run the following command:
 
 `docker-compose up -d`
